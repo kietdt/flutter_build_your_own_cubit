@@ -6,7 +6,7 @@ import 'feature/simple_counter_notifier/simple_counter.dart';
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  final int type = 0;
+  final int type = 1;
 
   @override
   Widget build(BuildContext context) {

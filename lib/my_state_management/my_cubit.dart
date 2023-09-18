@@ -22,7 +22,7 @@ class MyCubit<S> extends ChangeNotifier implements ValueListenable<S> {
 }
 
 extension BuildContextExtensions on BuildContext {
-  C read<C extends MyCubit>() {
+  read<C extends MyCubit>() {
     C cubit = dependOnInheritedWidgetOfExactType<MyInheritedNotifier<C>>()!
         .notifier! as C;
     return cubit;

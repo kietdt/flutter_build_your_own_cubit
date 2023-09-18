@@ -11,7 +11,7 @@ class SimpleCounterWithCubit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MyBlocProvider<SimpleCounterBloc>(
+    return MyBlocProvider(
       create: (_) => SimpleCounterBloc(),
       child: _buildBody(),
     );
@@ -63,6 +63,7 @@ class _SimpleCounterPageState extends State<SimpleCounterPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        // onPressed: () {},
         onPressed: context.read<SimpleCounterBloc>().increase,
         tooltip: 'Increment',
         child: const Icon(Icons.add),

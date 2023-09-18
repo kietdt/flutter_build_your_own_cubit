@@ -10,9 +10,10 @@ class MyInheritedNotifier<C extends MyCubit> extends InheritedNotifier {
           notifier: myCubit,
         );
 
-  static C of<C extends MyCubit>(BuildContext context) {
-    return context
+  static of<C extends MyCubit>(BuildContext context) {
+    C myCubit = context
         .dependOnInheritedWidgetOfExactType<MyInheritedNotifier<C>>()!
         .notifier! as C;
+    return myCubit;
   }
 }
