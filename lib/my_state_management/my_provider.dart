@@ -15,6 +15,13 @@ class MyBlocProvider<C extends MyCubit> extends StatefulWidget {
   State<StatefulWidget> createState() {
     return _MyBlocProviderState<C>();
   }
+
+  static of<C extends MyCubit>(BuildContext context) {
+    C myCubit = context
+        .dependOnInheritedWidgetOfExactType<MyInheritedNotifier<C>>()!
+        .notifier! as C;
+    return myCubit;
+  }
 }
 
 class _MyBlocProviderState<C extends MyCubit> extends State<MyBlocProvider> {
